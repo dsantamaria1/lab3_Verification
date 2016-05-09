@@ -1,0 +1,42 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-NOCOPYRIGHT
+-NOWARN
+DLDEFM
+-NOWARN
+BADPRF
+-NOWARN
+INVSUP
+-NOWARN
+SPDUSD
+-NOCOPYRIGHT
+-NCERROR
+CUVDSI
+-NCERROR
+CUVDSO
+-NCERROR
+CUVDSB
+-NCERROR
+CUVDSM
+-NCERROR
+CUVDSN
+-NCERROR
+CUVDSF
++EMGRLOG
+.ifv/irun.log
+-XLSTIME
+1459180737
+-XLKEEP
+-XLMODE
+./INCA_libs/irun.lnx8664.13.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx8664.13.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.13.20.nc/hdl.var
+-XLNAME
+irun
+-XLVERSION
+"TOOL:	irun(64)	13.20-s034"

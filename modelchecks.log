@@ -1,0 +1,10 @@
+formalverifier: *W,NUINIT: Number of un-initialized DFF/DLAT in design : 68.
+reg     [31:0]              extra_write_data_r;
+|
+formalverifier: *W,DFFUIN (./a25_wishbone.v,148|0): The DFF/DLAT "a25_wishbone.extra_write_data_r[31:0]" is un-initialized in the design. Use the init -add command to initialize it.
+reg     [31:0]              extra_write_address_r;
+|
+formalverifier: *W,DFFUIN (./a25_wishbone.v,149|0): The DFF/DLAT "a25_wishbone.extra_write_address_r[31:0]" is un-initialized in the design. Use the init -add command to initialize it.
+reg     [3:0]               extra_write_be_r;
+|
+formalverifier: *W,DFFUIN (./a25_wishbone.v,150|0): The DFF/DLAT "a25_wishbone.extra_write_be_r[3:0]" is un-initialized in the design. Use the init -add command to initialize it.

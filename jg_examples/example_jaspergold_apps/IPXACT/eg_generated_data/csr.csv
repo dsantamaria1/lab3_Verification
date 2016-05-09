@@ -1,0 +1,28 @@
+,,NAME, SIZE, BYTE_ADDRESS, ACCESS TYPE, RESET VALUES, DESCRIPTION
+ADDR_BLOCK,DC_Block,0x1800,0x2000
+CSR,, DC_Group_DC_Block_DCBFR, 32, 0x1802, RW, ,  ,#ipxact/or1k.xml:122
+,FIELD, FLUSH, 0, 0, WO, , """ """,#ipxact/or1k.xml:126
+CSR,, DC_Group_DC_Block_DCBIR, 32, 0x1803, RW, ,  ,#ipxact/or1k.xml:133
+,FIELD, INVALIDATE, 0, 0, WO, , """ """,#ipxact/or1k.xml:137
+ADDR_BLOCK_END
+ADDR_BLOCK,PIC_Block,0x4800,0x5000
+CSR,, PIC_Group_PIC_Block_PICMR, 32, 0x4800, RW, 0x0,  ,#ipxact/or1k.xml:153
+,FIELD, MASK, 18, 2,  , , """ """,#ipxact/or1k.xml:161
+ADDR_BLOCK_END
+ADDR_BLOCK,Sys_Block,0x0,0x800
+CSR,, Sys_Group_Sys_Block_VR, 32, 0x0, RW, 0x12000008,  ,#ipxact/or1k.xml:15
+,FIELD, REVISION, 5, 0, RO, , """ """,#ipxact/or1k.xml:23
+,FIELD, VERSION, 31, 24, RO, , """ """,#ipxact/or1k.xml:29
+CSR,, Sys_Group_Sys_Block_UPR, 32, 0x1, RW, 0xe7f, Unit Present Register,#ipxact/or1k.xml:37
+,FIELD, UP, 0, 0, RO, , """ """,#ipxact/or1k.xml:46
+,FIELD, DCP, 1, 1, RO, , """ """,#ipxact/or1k.xml:52
+,FIELD, ICP, 2, 2, RO, , """ """,#ipxact/or1k.xml:58
+,FIELD, DMP, 3, 3, RO, , """ """,#ipxact/or1k.xml:64
+,FIELD, IMP, 4, 4, RO, , """ """,#ipxact/or1k.xml:70
+,FIELD, MP, 5, 5, RO, , """ """,#ipxact/or1k.xml:76
+,FIELD, DUP, 6, 6, RO, , """ """,#ipxact/or1k.xml:82
+,FIELD, PCUP, 7, 7, RO, , """ """,#ipxact/or1k.xml:88
+CSR,, Sys_Group_Sys_Block_NPC, 32, 0x10, RW, , Next Program Counter Register,#ipxact/or1k.xml:95
+,FIELD, PC, 31, 0, RW, , """ """,#ipxact/or1k.xml:101
+,ATTR, DIRECT_WRITE,1'b1,or1200_top0.or1200_cpu.or1200_sprs.spr_dat_npc,,
+ADDR_BLOCK_END

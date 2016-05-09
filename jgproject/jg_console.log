@@ -1,0 +1,31 @@
+2016-03-28 16:15:26.143983 (17246) main____ INFO    ----------------------------------------
+2016-03-28 16:15:26.144262 (17246) main____ INFO    JasperGold version info
+2016-03-28 16:15:26.144286 (17246) main____ INFO      tool      : JasperGold 2015.09
+2016-03-28 16:15:26.144307 (17246) main____ INFO      version   : 2015.09 FCS 64 bits
+2016-03-28 16:15:26.144322 (17246) main____ INFO      build date: 2015.09.29 22:07:28 PDT
+2016-03-28 16:15:26.144333 (17246) main____ INFO    ----------------------------------------
+2016-03-28 16:15:26.144342 (17246) main____ INFO    Runtime info:
+2016-03-28 16:15:26.144355 (17246) main____ INFO      platform  : Linux 2.6.32-573.12.1.el6.x86_64 x86_64
+2016-03-28 16:15:26.144370 (17246) main____ INFO      hostname  : wario
+2016-03-28 16:15:26.144382 (17246) main____ INFO      pid       : 17246
+2016-03-28 16:15:26.144393 (17246) main____ INFO      arguments : '-style' 'windows'
+2016-03-28 16:15:26.144402 (17246) main____ INFO    ----------------------------------------
+2016-03-28 16:15:26.147438 (17246) lic__man INFO    Claim 'main' for <ui>.
+2016-03-28 16:15:26.151991 (17246) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2016-03-28 16:15:26.171337 (17246) lic_core INFO    ... (1) checkout succeeded
+2016-03-28 16:15:26.171494 (17246) lic__man INFO    Claim 'fpv' for <ui>.
+2016-03-28 16:15:26.171549 (17246) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2016-03-28 16:15:26.188389 (17246) lic_core INFO    ... (2) checkout succeeded
+2016-03-28 16:15:26.701094 (17246) lic__man INFO    Claim 'fpv' for <ui>.
+2016-03-28 16:15:26.796253 (17246) lic__man INFO    Unclaim 'fpv' for <ui>.
+2016-03-28 16:15:26.796317 (17246) lic__man INFO    Claim 'fpv' for <ui>.
+2016-03-28 16:15:26.808932 (17246) session_ INFO    Starting analysis session with session id 'session_0' ...
+2016-03-28 16:15:26.811795 (17246) session_ INFO    Analysis session with session id 'session_0' started (pid: 17282)
+2016-03-28 16:15:30.251504 (17246) session_ INFO    Analysis session 'session_0' connected to the console (host: 146.6.221.77:55884)
+2016-03-28 16:15:35.432275 (17246) lic__man INFO    Unclaim everything for 'session_0*'.
+2016-03-28 16:15:38.634658 (17246) lic__man INFO    Claim 'fpv' for 'session_0'.
+2016-03-28 16:15:39.784243 (17246) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2016-03-28 16:38:05.036322 (17246) lic__man INFO    Entering idle state.
+2016-03-28 16:38:10.237532 (17246) lic__man INFO    Leaving idle state.
+2016-03-28 16:48:16.360755 (17246) main____ INFO    About to exit: requested from GUI
+2016-03-28 16:48:16.434845 (17246) main____ INFO    Exiting.

@@ -1,0 +1,42 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-NOCOPYRIGHT
+-NOWARN
+DLDEFM
+-NOWARN
+BADPRF
+-NOWARN
+INVSUP
+-NOCOPYRIGHT
+-NCERROR
+CUVDSI
+-NCERROR
+CUVDSO
+-NCERROR
+CUVDSB
+-NCERROR
+CUVDSM
+-NCERROR
+CUVDSN
+-NCERROR
+CUVDSF
+-EMGRLOG
+.ifv/irun.log
+-XLSTIME
+1459214842
+-XLKEEP
+-XLMODE
+./INCA_libs/irun.lnx86.10.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx86.10.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.10.20.nc/hdl.var
+-XLNAME
+irun
+-XLVERSION
+"TOOL:	irun	10.20-s070"
+-XLNAME
+./INCA_libs/irun.lnx86.10.20.nc/yoshi.ece.utexas.edu_18587

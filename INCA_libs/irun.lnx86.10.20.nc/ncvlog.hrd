@@ -1,0 +1,23 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-assert
+-LINEDEBUG
+-DELAY_TRIGGER
+-GENASSERT_SYNTH_PRAGMA
+-sv
+-LIBEXT
+.vlib
+-LIBEXT
+.v
+-INCDIR
+/usr/local/packages/cadence_2010/INCISIV102/tools/ial/include
+-DEFINE
+IAL_OVL_ACCELLERA
+-DEFINE
+OVL_PSL
+-DEFINE
+OVL_ASSERT_ON
+-DEFINE
+IAL_IFV

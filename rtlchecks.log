@@ -1,0 +1,863 @@
+
+  ==========================================================================
+Performing lint checks 
+
+input                       i_exclusive,      // high for read part of swap access
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,71|0): The HDL source line is 82 characters, which exceeds the recommended length of 80 characters.
+assign dcache_cached_rready     = dcache_cached_rreq_r   && servicing_dcache_cached_read_r   && read_ack;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,154|0): The HDL source line is 105 characters, which exceeds the recommended length of 80 characters.
+assign dcache_uncached_rready   = dcache_uncached_rreq_r && servicing_dcache_uncached_read_r && read_ack;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,155|0): The HDL source line is 105 characters, which exceeds the recommended length of 80 characters.
+assign o_dcache_cached_ready    = dcache_cached_rready   || dcache_cached_wready;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,158|0): The HDL source line is 81 characters, which exceeds the recommended length of 80 characters.
+assign o_dcache_uncached_ready  = dcache_uncached_rready || dcache_uncached_wready;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,159|0): The HDL source line is 83 characters, which exceeds the recommended length of 80 characters.
+assign dcache_cached_rreq_c     = ( dcache_cached_rreq_in   || dcache_cached_rreq_r   ) && !(servicing_dcache_cached_read_r   && read_ack);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,173|0): The HDL source line is 139 characters, which exceeds the recommended length of 80 characters.
+assign dcache_uncached_rreq_c   = ( dcache_uncached_rreq_in || dcache_uncached_rreq_r ) && !(servicing_dcache_uncached_read_r && read_ack);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,174|0): The HDL source line is 139 characters, which exceeds the recommended length of 80 characters.
+assign dcache_read_qword_c      = ( i_dcache_qword       || dcache_read_qword_r ) && !(servicing_dcache_cached_read_r && read_ack);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,176|0): The HDL source line is 131 characters, which exceeds the recommended length of 80 characters.
+assign icache_read_req_c        = ( icache_read_req_in   || icache_read_req_r   ) && !(servicing_icache_r && read_ack);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,178|0): The HDL source line is 119 characters, which exceeds the recommended length of 80 characters.
+assign icache_read_qword_c      = ( i_icache_qword       || icache_read_qword_r ) && !(servicing_icache_r && read_ack);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,179|0): The HDL source line is 119 characters, which exceeds the recommended length of 80 characters.
+assign icache_read_addr_c       = i_icache_req ?  i_icache_address : icache_read_addr_r;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,180|0): The HDL source line is 88 characters, which exceeds the recommended length of 80 characters.
+assign dcache_req_c             = dcache_cached_rreq_c || dcache_cached_wreq_c || dcache_uncached_rreq_c || dcache_uncached_wreq_c;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,182|0): The HDL source line is 131 characters, which exceeds the recommended length of 80 characters.
+assign write_req_c              = dcache_cached_wreq_c || dcache_uncached_wreq_c;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,183|0): The HDL source line is 81 characters, which exceeds the recommended length of 80 characters.
+assign start_access             = !wait_write_ack && (dcache_req_c || icache_read_req_c);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,185|0): The HDL source line is 89 characters, which exceeds the recommended length of 80 characters.
+assign dcache_cached_wready     = (dcache_cached_wreq_c && wishbone_st == WB_IDLE);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,191|0): The HDL source line is 83 characters, which exceeds the recommended length of 80 characters.
+assign dcache_uncached_wready   = (dcache_uncached_wreq_c && wishbone_st == WB_IDLE);
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,192|0): The HDL source line is 85 characters, which exceeds the recommended length of 80 characters.
+assign dcache_cached_wreq_c     = dcache_cached_wreq_in   || dcache_cached_wreq_r;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,193|0): The HDL source line is 82 characters, which exceeds the recommended length of 80 characters.
+assign dcache_uncached_wreq_c   = dcache_uncached_wreq_in || dcache_uncached_wreq_r;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,194|0): The HDL source line is 84 characters, which exceeds the recommended length of 80 characters.
+assign extra_write =  wishbone_st == WB_IDLE && !i_wb_ack && ((dcache_cached_wreq_c && dcache_cached_wready)||
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,201|0): The HDL source line is 110 characters, which exceeds the recommended length of 80 characters.
+                                                              (dcache_uncached_wreq_c && dcache_uncached_wready));
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,202|0): The HDL source line is 114 characters, which exceeds the recommended length of 80 characters.
+	o_wb_dat <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,206|0): HDL source line contains one or more control characters.
+	dcache_cached_rreq_r   <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,216|0): HDL source line contains one or more control characters.
+	dcache_cached_wreq_r   <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,217|0): HDL source line contains one or more control characters.
+	dcache_uncached_rreq_r <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,218|0): HDL source line contains one or more control characters.
+	dcache_uncached_wreq_r <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,219|0): HDL source line contains one or more control characters.
+	icache_read_req_r  <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,220|0): HDL source line contains one or more control characters.
+	icache_read_qword_r  <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,221|0): HDL source line contains one or more control characters.
+	icache_read_addr_r  <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,222|0): HDL source line contains one or more control characters.
+	dcache_read_qword_r  <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,223|0): HDL source line contains one or more control characters.
+    dcache_cached_wreq_r   <= dcache_cached_wreq_c   && (wishbone_st != WB_IDLE || (o_wb_stb && !i_wb_ack));
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,232|0): The HDL source line is 108 characters, which exceeds the recommended length of 80 characters.
+    dcache_uncached_wreq_r <= dcache_uncached_wreq_c && (wishbone_st != WB_IDLE || (o_wb_stb && !i_wb_ack));
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,233|0): The HDL source line is 108 characters, which exceeds the recommended length of 80 characters.
+    // The flag can be set during any state but only cleared during WB_IDLE or WB_WAIT_ACK
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,245|0): The HDL source line is 90 characters, which exceeds the recommended length of 80 characters.
+            dcache_cached_rreq_r <= dcache_cached_rreq_c && !o_dcache_cached_ready;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,249|0): The HDL source line is 83 characters, which exceeds the recommended length of 80 characters.
+            dcache_uncached_rreq_r <= dcache_uncached_rreq_c && !o_dcache_uncached_ready;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,256|0): The HDL source line is 89 characters, which exceeds the recommended length of 80 characters.
+        dcache_uncached_rreq_r <= dcache_uncached_rreq_c && !o_dcache_uncached_ready;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,259|0): The HDL source line is 85 characters, which exceeds the recommended length of 80 characters.
+	begin
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,268|0): HDL source line contains one or more control characters.
+		o_wb_adr <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,269|0): HDL source line contains one or more control characters.
+		o_wb_sel <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,270|0): HDL source line contains one or more control characters.
+		o_wb_we  <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,271|0): HDL source line contains one or more control characters.
+		o_wb_cyc <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,272|0): HDL source line contains one or more control characters.
+		o_wb_stb <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,273|0): HDL source line contains one or more control characters.
+		servicing_dcache_cached_read_r <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,274|0): HDL source line contains one or more control characters.
+		servicing_dcache_uncached_read_r <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,275|0): HDL source line contains one or more control characters.
+		servicing_icache_r <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,276|0): HDL source line contains one or more control characters.
+		extra_write_r <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,277|0): HDL source line contains one or more control characters.
+		exclusive_access <= 'd0;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,278|0): HDL source line contains one or more control characters.
+		wishbone_st <= WB_IDLE;
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,279|0): HDL source line contains one or more control characters.
+	end
+|
+halcheck: *W,CTLCHR (./a25_wishbone.v,280|0): HDL source line contains one or more control characters.
+                // Another write that was acked and needs to be sent before returning to IDLE ?
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,405|0): The HDL source line is 95 characters, which exceeds the recommended length of 80 characters.
+                    o_wb_adr[31:0]                      <= extra_write_address_r;
+|
+halcheck: *W,MAXLEN (./a25_wishbone.v,413|0): The HDL source line is 81 characters, which exceeds the recommended length of 80 characters.
+module a25_wishbone
+|
+halcheck: *N,PRTCNT (./a25_wishbone.v,58|0): Module/Entity 'a25_wishbone' contains '27' ports.
+halcheck: (./a25_wishbone.v,58): Number of Input ports: 16.
+halcheck: (./a25_wishbone.v,58): Number of Output ports: 11.
+//synopsys translate_off
+|
+halcheck: *W,LEXPGM (./a25_wishbone.v,432|0): File contains lexical pragmas, however it is not compiled with pragma/lexpragma command-line option.
+input       [31:0]          i_icache_address,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,66|0): Numeric value '31' used for identifier 'i_icache_address'. Use constants to avoid portability issues.
+output      [31:0]          o_icache_read_data,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,67|0): Numeric value '31' used for identifier 'o_icache_read_data'. Use constants to avoid portability issues.
+input       [31:0]          i_dcache_write_data,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,76|0): Numeric value '31' used for identifier 'i_dcache_write_data'. Use constants to avoid portability issues.
+input       [3:0]           i_dcache_byte_enable,    // valid for writes only
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,77|0): Numeric value '3' used for identifier 'i_dcache_byte_enable'. Use constants to avoid portability issues.
+input       [31:0]          i_dcache_address,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,78|0): Numeric value '31' used for identifier 'i_dcache_address'. Use constants to avoid portability issues.
+output      [31:0]          o_dcache_read_data,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,79|0): Numeric value '31' used for identifier 'o_dcache_read_data'. Use constants to avoid portability issues.
+output reg  [31:0]          o_wb_adr,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,84|0): Numeric value '31' used for identifier 'o_wb_adr'. Use constants to avoid portability issues.
+output reg  [3:0]           o_wb_sel,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,85|0): Numeric value '3' used for identifier 'o_wb_sel'. Use constants to avoid portability issues.
+input       [31:0]          i_wb_dat,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,87|0): Numeric value '31' used for identifier 'i_wb_dat'. Use constants to avoid portability issues.
+output reg  [31:0]          o_wb_dat,
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,88|0): Numeric value '31' used for identifier 'o_wb_dat'. Use constants to avoid portability issues.
+wire    [31:0]              icache_read_addr_c;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,107|0): Numeric value '31' used for identifier 'icache_read_addr_c'. Use constants to avoid portability issues.
+wire    [3:0]               byte_enable;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,133|0): Numeric value '3' used for identifier 'byte_enable'. Use constants to avoid portability issues.
+wire    [(14*8)-1:0]   xWB_STATE;
+|
+halcheck: *W,LCVARN (./a25_wishbone.v,433|0): Net name 'xWB_STATE' uses uppercase characters.
+wire    [(14*8)-1:0]   xWB_STATE;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,433|0): Numeric value '14' used for identifier 'xWB_STATE'. Use constants to avoid portability issues.
+reg     [2:0]               wishbone_st;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,103|0): Numeric value '2' used for identifier 'wishbone_st'. Use constants to avoid portability issues.
+reg     [31:0]              icache_read_addr_r;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,139|0): Numeric value '31' used for identifier 'icache_read_addr_r'. Use constants to avoid portability issues.
+reg     [31:0]              extra_write_data_r;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,148|0): Numeric value '31' used for identifier 'extra_write_data_r'. Use constants to avoid portability issues.
+reg     [31:0]              extra_write_address_r;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,149|0): Numeric value '31' used for identifier 'extra_write_address_r'. Use constants to avoid portability issues.
+reg     [3:0]               extra_write_be_r;
+|
+halcheck: *W,STYVAL (./a25_wishbone.v,150|0): Numeric value '3' used for identifier 'extra_write_be_r'. Use constants to avoid portability issues.
+    if ( !quick_n_reset)
+|
+halcheck: *N,ALOWID (./a25_wishbone.v,205|0): Signal/variable name 'quick_n_reset' does not follow the active-low naming convention : should end with '_n'.
+	o_wb_dat <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,206|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+    else if ( wishbone_st == WB_WAIT_ACK && i_wb_ack && extra_write_r )
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,207|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+    if ( !quick_n_reset)
+|
+halcheck: *N,ALOWID (./a25_wishbone.v,214|0): Signal/variable name 'quick_n_reset' does not follow the active-low naming convention : should end with '_n'.
+	dcache_cached_rreq_r   <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,216|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	dcache_cached_rreq_r   <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,216|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	dcache_cached_rreq_r   <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,216|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+	dcache_cached_wreq_r   <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,217|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	dcache_cached_wreq_r   <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,217|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	dcache_cached_wreq_r   <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,217|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+	dcache_uncached_rreq_r <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,218|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	dcache_uncached_rreq_r <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,218|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	dcache_uncached_rreq_r <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,218|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+	dcache_uncached_wreq_r <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,219|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	dcache_uncached_wreq_r <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,219|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	dcache_uncached_wreq_r <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,219|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+	icache_read_req_r  <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,220|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	icache_read_req_r  <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,220|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	icache_read_req_r  <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,220|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+	icache_read_qword_r  <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,221|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	icache_read_qword_r  <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,221|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	icache_read_qword_r  <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,221|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+	icache_read_addr_r  <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,222|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	dcache_read_qword_r  <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,223|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+	dcache_read_qword_r  <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,223|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+	dcache_read_qword_r  <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,223|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+    if ( i_icache_req ) icache_read_addr_r  <= i_icache_address;
+|
+halcheck: *W,SEPLIN (./a25_wishbone.v,229|0): Use a separate line for each HDL statement.
+    dcache_cached_wreq_r   <= dcache_cached_wreq_c   && (wishbone_st != WB_IDLE || (o_wb_stb && !i_wb_ack));
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,232|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+    dcache_uncached_wreq_r <= dcache_uncached_wreq_c && (wishbone_st != WB_IDLE || (o_wb_stb && !i_wb_ack));
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,233|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+        if ( wishbone_st == WB_IDLE || wishbone_st == WB_WAIT_ACK )
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,248|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+        if ( wishbone_st == WB_IDLE || wishbone_st == WB_WAIT_ACK )
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,255|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+    if ( !quick_n_reset)
+|
+halcheck: *N,ALOWID (./a25_wishbone.v,267|0): Signal/variable name 'quick_n_reset' does not follow the active-low naming convention : should end with '_n'.
+		o_wb_adr <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,269|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		o_wb_sel <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,270|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		o_wb_sel <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,270|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		o_wb_we  <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,271|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		o_wb_we  <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,271|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		o_wb_we  <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,271|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		o_wb_cyc <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,272|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		o_wb_cyc <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,272|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		o_wb_cyc <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,272|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		o_wb_stb <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,273|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		o_wb_stb <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,273|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		o_wb_stb <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,273|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		servicing_dcache_cached_read_r <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,274|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		servicing_dcache_cached_read_r <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,274|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		servicing_dcache_cached_read_r <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,274|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		servicing_dcache_uncached_read_r <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,275|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		servicing_dcache_uncached_read_r <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,275|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		servicing_dcache_uncached_read_r <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,275|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		servicing_icache_r <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,276|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		servicing_icache_r <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,276|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		servicing_icache_r <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,276|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		extra_write_r <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,277|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		extra_write_r <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,277|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		extra_write_r <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,277|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+		exclusive_access <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,278|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+		exclusive_access <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,278|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+		exclusive_access <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,278|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+        WB_IDLE :
+|
+halcheck: *W,UELCIT (./a25_wishbone.v,283|0): Unequal length in case item comparison (selector is 3 bits, case tag expression is 4 bits) in module/design-unit a25_wishbone.
+        WB_BURST1:  
+|
+halcheck: *W,UELCIT (./a25_wishbone.v,373|0): Unequal length in case item comparison (selector is 3 bits, case tag expression is 4 bits) in module/design-unit a25_wishbone.
+        WB_BURST2:  
+|
+halcheck: *W,UELCIT (./a25_wishbone.v,383|0): Unequal length in case item comparison (selector is 3 bits, case tag expression is 4 bits) in module/design-unit a25_wishbone.
+        WB_BURST3:  
+|
+halcheck: *W,UELCIT (./a25_wishbone.v,393|0): Unequal length in case item comparison (selector is 3 bits, case tag expression is 4 bits) in module/design-unit a25_wishbone.
+        WB_WAIT_ACK:   
+|
+halcheck: *W,UELCIT (./a25_wishbone.v,403|0): Unequal length in case item comparison (selector is 3 bits, case tag expression is 4 bits) in module/design-unit a25_wishbone.
+                o_wb_adr[3:2]   <= o_wb_adr[3:2] + 1'd1;
+|
+halcheck: *W,POIASG (./a25_wishbone.v,377|0): The result of addition operation may lead to a potential overflow in module/design-unit a25_wishbone.
+halcheck: (./a25_wishbone.v,377): LHS operand 'o_wb_adr[3:2]' is 2 bit(s), RHS operand 'o_wb_adr[3:2] + 1'd1' is 3 bit(s).
+halcheck: (./a25_wishbone.v,377): Increase the size of LHS by 1 bit(s).
+                o_wb_adr[3:2]   <= o_wb_adr[3:2] + 1'd1;
+|
+halcheck: *W,UELOPR (./a25_wishbone.v,377|0): Unequal length operand in bit/arithmetic operator PLUS in module/design-unit a25_wishbone.
+halcheck: (./a25_wishbone.v,377): LHS operand 'o_wb_adr[3:2]' is 2 bits, RHS operand '1'd1' is 1 bits.
+                o_wb_adr[3:2]   <= o_wb_adr[3:2] + 1'd1;
+|
+halcheck: *W,POIASG (./a25_wishbone.v,387|0): The result of addition operation may lead to a potential overflow in module/design-unit a25_wishbone.
+halcheck: (./a25_wishbone.v,387): LHS operand 'o_wb_adr[3:2]' is 2 bit(s), RHS operand 'o_wb_adr[3:2] + 1'd1' is 3 bit(s).
+halcheck: (./a25_wishbone.v,387): Increase the size of LHS by 1 bit(s).
+                o_wb_adr[3:2]   <= o_wb_adr[3:2] + 1'd1;
+|
+halcheck: *W,UELOPR (./a25_wishbone.v,387|0): Unequal length operand in bit/arithmetic operator PLUS in module/design-unit a25_wishbone.
+halcheck: (./a25_wishbone.v,387): LHS operand 'o_wb_adr[3:2]' is 2 bits, RHS operand '1'd1' is 1 bits.
+                o_wb_adr[3:2]   <= o_wb_adr[3:2] + 1'd1;
+|
+halcheck: *W,POIASG (./a25_wishbone.v,397|0): The result of addition operation may lead to a potential overflow in module/design-unit a25_wishbone.
+halcheck: (./a25_wishbone.v,397): LHS operand 'o_wb_adr[3:2]' is 2 bit(s), RHS operand 'o_wb_adr[3:2] + 1'd1' is 3 bit(s).
+halcheck: (./a25_wishbone.v,397): Increase the size of LHS by 1 bit(s).
+                o_wb_adr[3:2]   <= o_wb_adr[3:2] + 1'd1;
+|
+halcheck: *W,UELOPR (./a25_wishbone.v,397|0): Unequal length operand in bit/arithmetic operator PLUS in module/design-unit a25_wishbone.
+halcheck: (./a25_wishbone.v,397): LHS operand 'o_wb_adr[3:2]' is 2 bits, RHS operand '1'd1' is 1 bits.
+            if ( i_wb_ack )
+|
+halcheck: *W,DNGLEL (./a25_wishbone.v,404|0): Ambiguous else statement in the nested if statement. It is recommended to enclose the inner if statement in a begin/end block.
+                    extra_write_r                       <= 'd0;
+|
+halcheck: *W,IMPTYP (./a25_wishbone.v,408|0): Expression ''d0' implicitly converted to type 'register' from type 'integer'.
+                    extra_write_r                       <= 'd0;
+|
+halcheck: *W,INTTOB (./a25_wishbone.v,408|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit a25_wishbone.
+                    extra_write_r                       <= 'd0;
+|
+halcheck: *W,TRUNCZ (./a25_wishbone.v,408|0): Truncation in constant conversion without a loss of bits in module/design-unit a25_wishbone.
+assign dcache_cached_wready     = (dcache_cached_wreq_c && wishbone_st == WB_IDLE);
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,191|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+assign dcache_uncached_wready   = (dcache_uncached_wreq_c && wishbone_st == WB_IDLE);
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,192|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+assign extra_write =  wishbone_st == WB_IDLE && !i_wb_ack && ((dcache_cached_wreq_c && dcache_cached_wready)||
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,201|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+assign xWB_STATE  = wishbone_st == WB_IDLE       ? "WB_IDLE"       :
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,436|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+                    wishbone_st == WB_BURST1     ? "WB_BURST1"     :
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,437|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+                    wishbone_st == WB_BURST2     ? "WB_BURST2"     :
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,438|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+                    wishbone_st == WB_BURST3     ? "WB_BURST3"     :
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,439|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+                    wishbone_st == WB_WAIT_ACK   ? "WB_WAIT_ACK"   :
+|
+halcheck: *W,ULCMPE (./a25_wishbone.v,440|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit a25_wishbone. LHS operand is 3 bits, RHS operand is 4 bits.
+module module4SVA ( input logic i_clk, 
+|
+halcheck: *W,LCVARN (./module4SVA.sv,1|0): Module name 'module4SVA' uses uppercase characters.
+module4SVA wrp (
+|
+halcheck: *N,IDLENG (./INCA_libs/irun.lnx86.10.20.nc/.cdssvbind/cds_tmp_svbind_single_00002c4d_069248dd_1.sva,3|0): Identifier name 'wrp' is not of appropriate length (4 to 16 characters).
+  WB_IDLE_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_IDLE), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,19|0): The HDL source line is 96 characters, which exceeds the recommended length of 80 characters.
+                                                               1'b1,  (wishbone_st == WB_IDLE || 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,20|0): The HDL source line is 97 characters, which exceeds the recommended length of 80 characters.
+        						       wishbone_st == WB_BURST1 || wishbone_st == WB_WAIT_ACK),
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,21|0): HDL source line contains one or more control characters.
+							       quick_n_reset) 
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,22|0): HDL source line contains one or more control characters.
+  WB_BURST1_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_BURST1), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,24|0): The HDL source line is 100 characters, which exceeds the recommended length of 80 characters.
+                                                                 i_wb_ack, (wishbone_st == WB_BURST2),
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,25|0): The HDL source line is 102 characters, which exceeds the recommended length of 80 characters.
+								 quick_n_reset) 
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,26|0): HDL source line contains one or more control characters.
+  WB_BURST2_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_BURST2), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,28|0): The HDL source line is 100 characters, which exceeds the recommended length of 80 characters.
+                                                                 i_wb_ack, (wishbone_st == WB_BURST3), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,29|0): The HDL source line is 103 characters, which exceeds the recommended length of 80 characters.
+								 quick_n_reset) 
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,30|0): HDL source line contains one or more control characters.
+  WB_BURST3_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_BURST3), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,32|0): The HDL source line is 100 characters, which exceeds the recommended length of 80 characters.
+                                                                 i_wb_ack, (wishbone_st == WB_WAIT_ACK), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,33|0): The HDL source line is 105 characters, which exceeds the recommended length of 80 characters.
+								 quick_n_reset) 
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,34|0): HDL source line contains one or more control characters.
+  WB_WAIT_ACK_ValidTransition1: assert property( FSMValidTransition(i_clk, (wishbone_st ==  WB_WAIT_ACK), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,36|0): The HDL source line is 106 characters, which exceeds the recommended length of 80 characters.
+                                                                    (extra_write_r || ~i_wb_ack), (wishbone_st == WB_WAIT_ACK), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,37|0): The HDL source line is 128 characters, which exceeds the recommended length of 80 characters.
+								    quick_n_reset) 
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,38|0): HDL source line contains one or more control characters.
+  WB_WAIT_ACK_ValidTransition2: assert property( FSMValidTransition(i_clk, (wishbone_st ==  WB_WAIT_ACK), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,40|0): The HDL source line is 106 characters, which exceeds the recommended length of 80 characters.
+                                                                    (~extra_write_r && i_wb_ack), (wishbone_st == WB_IDLE), 
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,41|0): The HDL source line is 124 characters, which exceeds the recommended length of 80 characters.
+								    quick_n_reset) 
+|
+halcheck: *W,CTLCHR (./module4SVA.sv,42|0): HDL source line contains one or more control characters.
+     .i_clk(i_clk), .wishbone_st(wishbone_st), .i_wb_ack(i_wb_ack), .extra_write_r(extra_write_r), .quick_n_reset(quick_n_reset)
+|
+halcheck: *W,MAXLEN (./module4SVA.sv,57|0): The HDL source line is 128 characters, which exceeds the recommended length of 80 characters.
+module module4SVA ( input logic i_clk, 
+|
+halcheck: *N,PRTCNT (./module4SVA.sv,1|0): Module/Entity 'module4SVA' contains '5' ports.
+halcheck: (./module4SVA.sv,1): Number of Input ports: 5.
+                    input logic [2:0] wishbone_st, 
+|
+halcheck: *W,STYVAL (./module4SVA.sv,2|0): Numeric value '2' used for identifier 'wishbone_st'. Use constants to avoid portability issues.
+  const int timeOut = 1000; 
+|
+halcheck: *W,LCVARN (./module4SVA.sv,9|0): Variable name 'timeOut' uses uppercase characters.
+  const int timeOut = 1000; 
+|
+halcheck: *E,RTLINI (./module4SVA.sv,9|0): A variable/signal 'timeOut' in an RTL description is initialized in its declaration.
+  @(posedge clk) 1 |=> @(posedge clk) ##[1:timeOutVal] ~$stable(currentState); 
+|
+halcheck: *W,LOGNEG (./FSMProperties_pkg.sv,53|0): Bit-wise negation in a conditional expression. Logical NOT may have been intended.
+                 currentState & condition |=> nextState;
+|
+halcheck: *W,LOGAND (./FSMProperties_pkg.sv,23|0): Bit-wise AND in a conditional expression. Logical AND may have been intended.
+  WB_WAIT_ACK_ValidTransition2: assert property( FSMValidTransition(i_clk, (wishbone_st ==  WB_WAIT_ACK), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,40|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+                                                                    (~extra_write_r && i_wb_ack), (wishbone_st == WB_IDLE), 
+|
+halcheck: *W,LOGNEG (./module4SVA.sv,41|0): Bit-wise negation in a conditional expression. Logical NOT may have been intended.
+                                                                    (~extra_write_r && i_wb_ack), (wishbone_st == WB_IDLE), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,41|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+  @(posedge clk) disable iff (~reset) 
+|
+halcheck: *W,LOGNEG (./FSMProperties_pkg.sv,22|0): Bit-wise negation in a conditional expression. Logical NOT may have been intended.
+  WB_WAIT_ACK_ValidTransition1: assert property( FSMValidTransition(i_clk, (wishbone_st ==  WB_WAIT_ACK), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,36|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+                                                                    (extra_write_r || ~i_wb_ack), (wishbone_st == WB_WAIT_ACK), 
+|
+halcheck: *W,LOGNEG (./module4SVA.sv,37|0): Bit-wise negation in a conditional expression. Logical NOT may have been intended.
+                                                                    (extra_write_r || ~i_wb_ack), (wishbone_st == WB_WAIT_ACK), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,37|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+  WB_BURST3_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_BURST3), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,32|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+                                                                 i_wb_ack, (wishbone_st == WB_WAIT_ACK), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,33|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+  WB_BURST2_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_BURST2), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,28|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+                                                                 i_wb_ack, (wishbone_st == WB_BURST3), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,29|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+  WB_BURST1_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_BURST1), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,24|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+                                                                 i_wb_ack, (wishbone_st == WB_BURST2),
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,25|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+  WB_IDLE_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_IDLE), 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,19|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+                                                               1'b1,  (wishbone_st == WB_IDLE || 
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,20|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+        						       wishbone_st == WB_BURST1 || wishbone_st == WB_WAIT_ACK),
+|
+halcheck: *W,ULCMPE (./module4SVA.sv,21|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit wrp. LHS operand is 3 bits, RHS operand is 4 bits.
+wire    [31:0]              icache_read_addr_c;
+|
+halcheck: *W,URDWIR (./a25_wishbone.v,107|0): Wire 'icache_read_addr_c[1:0]' defined in module 'a25_wishbone' does not drive any object, but is assigned at least once.
+wire    [(14*8)-1:0]   xWB_STATE;
+|
+halcheck: *W,URDWIR (./a25_wishbone.v,433|0): Wire 'xWB_STATE' defined in module 'a25_wishbone' does not drive any object, but is assigned at least once.
+input                       i_wb_err
+|
+halcheck: *W,USEPRT (./a25_wishbone.v,92|0): The input/inout port 'i_wb_err' defined in the module 'a25_wishbone' is unused (neither read nor assigned).
+module Wrapper ;
+|
+halcheck: *W,LCVARN (./module4SVA.sv,54|0): Module name 'Wrapper' uses uppercase characters.
+module Wrapper ;
+|
+halcheck: *W,DIFFMN (./module4SVA.sv,54|0): Module name 'Wrapper' differs from file name 'module4SVA.sv'.
+module Wrapper ;
+|
+halcheck: *W,MULTMF (./module4SVA.sv,54|0): More than one design-unit definition in file 'module4SVA.sv'.
+module Wrapper ;
+|
+halcheck: *W,NEEDIO (./module4SVA.sv,54|0): Top-level module 'Wrapper' has no inputs/outputs/inouts.
+package FSMProperties;
+|
+halcheck: *W,USEPKG (./FSMProperties_pkg.sv,1|0): Package 'FSMProperties' is declared but no object is used from it.
+halcheck: Total errors   = 1.
+halcheck: Total warnings = 198.
+
+  ==========================================================================
+Performing synthesizability checks 
+Performing structural checks 
+
+assign o_icache_read_data       = i_wb_dat;
+|
+halstruct: *W,FDTHRU (./a25_wishbone.v,164|0): Feedthrough detected from input 'i_wb_dat' to output 'o_icache_read_data'.
+assign o_icache_ready           = icache_read_ready; 
+|
+halstruct: *W,TPOUNR (./a25_wishbone.v,163|0): Output 'o_icache_ready' of top-level module is not a register.
+assign o_dcache_read_data       = i_wb_dat;
+|
+halstruct: *W,FDTHRU (./a25_wishbone.v,160|0): Feedthrough detected from input 'i_wb_dat' to output 'o_dcache_read_data'.
+assign o_dcache_cached_ready    = dcache_cached_rready   || dcache_cached_wready;
+|
+halstruct: *W,TPOUNR (./a25_wishbone.v,158|0): Output 'o_dcache_cached_ready' of top-level module is not a register.
+assign o_dcache_uncached_ready  = dcache_uncached_rready || dcache_uncached_wready;
+|
+halstruct: *W,TPOUNR (./a25_wishbone.v,159|0): Output 'o_dcache_uncached_ready' of top-level module is not a register.
+                                                   "UNKNOWN"       ;
+|
+halstruct: *N,INFNOT (./a25_wishbone.v,441|0): Ignoring wire 'xWB_STATE' with no fanout to module/design-unit outputs or child instances.
+assign o_icache_read_data       = i_wb_dat;
+|
+halstruct: *W,DALIAS (./a25_wishbone.v,164|0): Aliased constructs found. Wires 'o_icache_read_data' and 'o_dcache_read_data' have same drivers.
+halstruct: (./a25_wishbone.v,160): o_dcache_read_data.
+        o_wb_dat <= i_dcache_write_data;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,210|0): Flip-flop 'o_wb_dat' has an asynchronous reset .
+input                       i_clk,
+|
+halstruct: *N,CLKINF (./a25_wishbone.v,61|0): Signal 'a25_wishbone.i_clk' was inferred as clock.
+halstruct: (./a25_wishbone.v,61): Clock source is signal 'a25_wishbone.i_clk'.
+halstruct: (./a25_wishbone.v,210): Drives the flip-flop 'a25_wishbone.o_wb_dat'.
+        dcache_cached_rreq_r <= dcache_cached_rreq_c && !o_dcache_cached_ready;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,252|0): Flip-flop 'dcache_cached_rreq_r' has an asynchronous reset 'quick_n_reset'.
+    dcache_cached_wreq_r   <= dcache_cached_wreq_c   && (wishbone_st != WB_IDLE || (o_wb_stb && !i_wb_ack));
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,232|0): Flip-flop 'dcache_cached_wreq_r' has an asynchronous reset 'quick_n_reset'.
+        dcache_uncached_rreq_r <= dcache_uncached_rreq_c && !o_dcache_uncached_ready;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,259|0): Flip-flop 'dcache_uncached_rreq_r' has an asynchronous reset 'quick_n_reset'.
+    dcache_uncached_wreq_r <= dcache_uncached_wreq_c && (wishbone_st != WB_IDLE || (o_wb_stb && !i_wb_ack));
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,233|0): Flip-flop 'dcache_uncached_wreq_r' has an asynchronous reset 'quick_n_reset'.
+    icache_read_req_r   <= icache_read_req_in  || icache_read_req_c;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,227|0): Flip-flop 'icache_read_req_r' has an asynchronous reset 'quick_n_reset'.
+    icache_read_qword_r <= i_icache_qword      || icache_read_qword_c;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,228|0): Flip-flop 'icache_read_qword_r' has an asynchronous reset 'quick_n_reset'.
+    if ( i_icache_req ) icache_read_addr_r  <= i_icache_address;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,229|0): Flip-flop 'icache_read_addr_r' has an asynchronous reset .
+    dcache_read_qword_r    <= i_dcache_qword      || dcache_read_qword_c;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,231|0): Flip-flop 'dcache_read_qword_r' has an asynchronous reset 'quick_n_reset'.
+        extra_write_data_r      <= i_dcache_write_data;
+|
+halstruct: *W,FFWNSR (./a25_wishbone.v,239|0): Flip-flop 'extra_write_data_r' does not have any set or reset.
+        extra_write_data_r      <= i_dcache_write_data;
+|
+halstruct: *W,RSTDAT (./a25_wishbone.v,239|0): Reset signal 'a25_wishbone.quick_n_reset' drives the data pin of flip-flop 'a25_wishbone.extra_write_data_r'.
+        extra_write_address_r   <= i_dcache_address;
+|
+halstruct: *W,FFWNSR (./a25_wishbone.v,240|0): Flip-flop 'extra_write_address_r' does not have any set or reset.
+        extra_write_address_r   <= i_dcache_address;
+|
+halstruct: *W,RSTDAT (./a25_wishbone.v,240|0): Reset signal 'a25_wishbone.quick_n_reset' drives the data pin of flip-flop 'a25_wishbone.extra_write_address_r'.
+        extra_write_be_r        <= i_dcache_byte_enable;
+|
+halstruct: *W,FFWNSR (./a25_wishbone.v,241|0): Flip-flop 'extra_write_be_r' does not have any set or reset.
+        extra_write_be_r        <= i_dcache_byte_enable;
+|
+halstruct: *W,RSTDAT (./a25_wishbone.v,241|0): Reset signal 'a25_wishbone.quick_n_reset' drives the data pin of flip-flop 'a25_wishbone.extra_write_be_r'.
+                    o_wb_adr[31:0]                      <= extra_write_address_r;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,413|0): Flip-flop 'o_wb_adr[1:0]' has an asynchronous reset .
+                    o_wb_adr[31:0]                      <= extra_write_address_r;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,413|0): Flip-flop 'o_wb_adr[3:2]' has an asynchronous reset .
+                    o_wb_adr[31:0]                      <= extra_write_address_r;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,413|0): Flip-flop 'o_wb_adr[31:4]' has an asynchronous reset .
+                    o_wb_sel                            <= extra_write_be_r;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,411|0): Flip-flop 'o_wb_sel' has an asynchronous reset .
+                    o_wb_we                             <= 1'd0;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,420|0): Flip-flop 'o_wb_we' has an asynchronous reset 'quick_n_reset'.
+                    o_wb_cyc                            <= exclusive_access; 
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,410|0): Flip-flop 'o_wb_cyc' has an asynchronous reset 'quick_n_reset'.
+                    o_wb_stb                            <= 1'd0; 
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,418|0): Flip-flop 'o_wb_stb' has an asynchronous reset 'quick_n_reset'.
+                    servicing_dcache_cached_read_r      <= 1'd0;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,421|0): Flip-flop 'servicing_dcache_cached_read_r' has an asynchronous reset 'quick_n_reset'.
+                    servicing_dcache_uncached_read_r    <= 1'd0;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,422|0): Flip-flop 'servicing_dcache_uncached_read_r' has an asynchronous reset 'quick_n_reset'.
+                    servicing_icache_r                  <= 1'd0;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,423|0): Flip-flop 'servicing_icache_r' has an asynchronous reset 'quick_n_reset'.
+                    extra_write_r                       <= 'd0;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,408|0): Flip-flop 'extra_write_r' has an asynchronous reset 'quick_n_reset'.
+                exclusive_access            <= 1'd0;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,334|0): Flip-flop 'exclusive_access' has an asynchronous reset 'quick_n_reset'.
+                    wishbone_st                         <= WB_IDLE;
+|
+halstruct: *N,FFASRT (./a25_wishbone.v,417|0): Flip-flop 'wishbone_st' has an asynchronous reset .
+module a25_wishbone
+|
+halstruct: *W,ATLGLC (./a25_wishbone.v,58|0): Glue logic inferred in top-level module/design-unit 'a25_wishbone'.
+halstruct: (./a25_wishbone.v,180): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,188): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,205): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,214): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,267): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,441): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,436): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,437): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,438): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,439): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,440): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,152): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,154): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,155): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,158): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,159): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,160): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,162): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,163): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,164): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,167): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,168): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,169): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,170): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,171): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,173): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,174): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,176): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,178): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,179): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,182): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,183): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,185): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,191): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,192): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,193): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,194): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,201): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,262): HDL-statement inferred as glue logic.
+halstruct: (<unknown-source>,0): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,210): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,252): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,232): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,259): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,233): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,227): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,228): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,229): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,231): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,239): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,240): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,241): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,413): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,411): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,420): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,410): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,418): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,421): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,422): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,423): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,408): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,334): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,417): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,283): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,373): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,383): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,393): HDL-statement inferred as glue logic.
+halstruct: (./a25_wishbone.v,403): HDL-statement inferred as glue logic.
+module a25_wishbone
+|
+halstruct: *W,SYNASN (./a25_wishbone.v,58|0): The module/design-unit 'a25_wishbone' contains synchronous as well as asynchronous logic.
+halstruct: (./a25_wishbone.v,262): One instance/occurence of asynchronous logic at 'a25_wishbone.wait_write_ack'.
+halstruct: (./a25_wishbone.v,210): One instance/occurence of synchronous logic at 'a25_wishbone.o_wb_dat'.
+module a25_wishbone
+|
+halstruct: *N,NUMDFF (./a25_wishbone.v,58|0): Number of single-bit D flip-flops present in the hierarchy is 186.
+halstruct: Total errors   = 0.
+halstruct: Total warnings = 14.
+
+  ==========================================================================
+package FSMProperties;
+|
+formalbuild: *W,SYSVIG (./FSMProperties_pkg.sv,1|0): SystemVerilog 'Package' construct is not supported by the tool. This will be ignored.
+  WB_IDLE_ValidTransition: assert property( FSMValidTransition(i_clk, (wishbone_st == WB_IDLE), 
+|
+formalbuild: *W,SYSVIG (./module4SVA.sv,19|0): SystemVerilog 'Package Import' construct is not supported by the tool. This will be ignored.
+  WB_IDLE_TimeOut: assert property(FSMTimeOut(i_clk, wishbone_st, 1000));
+|
+formalbuild: *W,SYSVIG (./module4SVA.sv,47|0): SystemVerilog 'Package Import' construct is not supported by the tool. This will be ignored.
+  import FSMProperties::*;
+|
+formalbuild: *W,SYSVIG (./module4SVA.sv,8|0): SystemVerilog 'Package Import' construct is not supported by the tool. This will be ignored.
+  const int timeOut = 1000; 
+|
+formalbuild: *W,INIUSP (./module4SVA.sv,9|0): Module module4SVA has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+always @( posedge i_clk or negedge quick_n_reset )
+|
+formalbuild: *W,FFASMX (./a25_wishbone.v,213|0): In the specified always/process block, descriptions of flip-flops with and without asynchronous set/reset are mixed. Flip-flops without asynchronous set/reset are: extra_write_data_r, extra_write_address_r, extra_write_be_r.
+    case ( wishbone_st )
+|
+formalbuild: *N,FSMIDN (./a25_wishbone.v,282|0): In module/design-unit 'a25_wishbone', FSM for state register 'wishbone_st' has been recognized.
+always @( posedge i_clk or negedge quick_n_reset)
+|
+formalbuild: *W,BADFSM (./a25_wishbone.v,265|0): In module/design-unit 'a25_wishbone', FSM for state register 'wishbone_st' does not adhere to modeling style guidelines.
+module a25_wishbone
+|
+formalbuild: *W,EXTFSM (./a25_wishbone.v,58|0): Extraneous logic present in module/design-unit 'a25_wishbone' that encodes an FSM.
+formalbuild: Total errors   = 0.
+formalbuild: Total warnings = 8.
+
+  ==========================================================================

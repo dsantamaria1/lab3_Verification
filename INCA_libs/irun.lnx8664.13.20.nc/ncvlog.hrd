@@ -1,0 +1,19 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-assert
+-LINEDEBUG
+-DELAY_TRIGGER
+-GENASSERT_SYNTH_PRAGMA
+-sv
+-INCDIR
+/usr/local/packages/cadence_2015/incisiv13.2/tools/ial/include
+-DEFINE
+IAL_OVL_ACCELLERA
+-DEFINE
+OVL_PSL
+-DEFINE
+OVL_ASSERT_ON
+-DEFINE
+IAL_IFV

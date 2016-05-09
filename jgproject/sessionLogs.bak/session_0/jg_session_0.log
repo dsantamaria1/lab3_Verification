@@ -1,0 +1,303 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2015.09
+# platform  : Linux 2.6.32-573.12.1.el6.x86_64
+# version   : 2015.09 FCS 64 bits
+# build date: 2015.09.29 22:07:32 PDT
+#----------------------------------------
+# started Mon Mar 28 16:13:37 CDT 2016
+# hostname  : wario
+# pid       : 16499
+# arguments : '-label' 'session_0' '-console' 'wario:49294' '-style' 'windows' '-proj' '/home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/jgproject/.tmp/.initCmds.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2015 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fpv".
+INFO: reading configuration file "/home/ecelrc/students/dsantamaria/.config/jasper/jaspergold.conf".
+% include /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/wishbone_try1.tcl
+%% # ----------------------------------------
+%% # JasperGold Version Info
+%% # tool      : JasperGold 2015.09
+%% # platform  : Linux 2.6.32-573.12.1.el6.x86_64
+%% # version   : 2015.09 FCS 64 bits
+%% # build date: 2015.09.29 22:07:32 PDT
+%% # ----------------------------------------
+%% # started Mon Mar 28 14:34:35 CDT 2016
+%% # created Mon Mar 28 14:57:22 CDT 2016
+%% # hostname  : wario
+%% # pid       : 21629
+%% # arguments : '-label' 'session_0' '-console' 'wario:55238' '-style' 'windows' '-proj' '/home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/jgproject/.tmp/.initCmds.tcl'
+%% # ----------------------------------------
+%% # 
+%% # Any disclosure about the Cadence Design Systems software or its use
+%% # model to any third party violates the written Non-Disclosure Agreement
+%% # between Cadence Design Systems, Inc. and the customer.
+%% # 
+%% # THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+%% # CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+%% # PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+%% # DESIGN SYSTEMS, INC.
+%% # 
+%% # Copyright (C) 2000-2015 Cadence Design Systems, Inc. All Rights
+%% # Reserved.  Unpublished -- rights reserved under the copyright laws of
+%% # the United States.
+%% # 
+%% # This product includes software developed by others and redistributed
+%% # according to license agreement. See doc/third_party_readme.txt for
+%% # further details.
+%% # 
+%% # RESTRICTED RIGHTS LEGEND
+%% # 
+%% # Use, duplication, or disclosure by the Government is subject to
+%% # restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+%% # Technical Data and Computer Software clause at DFARS 252.227-7013 or
+%% # subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+%% # Rights at 48 CFR 52.227-19, as applicable.
+%% # 
+%% # 
+%% #                           Cadence Design Systems, Inc. 
+%% #                           2655 Seely Avenue
+%% #                           San Jose, CA 95134
+%% #                           Phone: 408.943.1234
+%% # 
+%% # For technical assistance visit http://support.cadence.com.
+%% # Setup environment
+%% # Read in HDL files
+%% analyze -clear
+%% analyze -v2k /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/a25_wishbone.v
+[-- (VERI-1482)] Analyzing Verilog file /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/a25_wishbone.v
+%% analyze -sv09 /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/FSMProperties_pkg.sv
+[-- (VERI-1482)] Analyzing Verilog file /misc/linuxws/packages/cadence_2016/jasper_2015.09/lib/verilog/packages/std/std.sv into library std
+[-- (VERI-1482)] Analyzing Verilog file /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/FSMProperties_pkg.sv
+%% analyze -sv09 /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/module4SVA.sv
+[-- (VERI-1482)] Analyzing Verilog file /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/module4SVA.sv
+%% elaborate -top a25_wishbone
+INFO (ISW003): Top module name is "a25_wishbone".
+[INFO (VERI-1018)] /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/a25_wishbone.v(58): compiling module a25_wishbone
+[INFO (VERI-1018)] /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/module4SVA.sv(1): compiling module module4SVA
+[INFO] Beginning multiple driver analysis
+[INFO] Finished multiple driver analysis
+[INFO] Module Name std
+[INFO] Module Name FSMProperties
+[INFO] Module Name a25_wishbone
+a25_wishbone
+%% # Setup global environment
+%% # Setup global clocks and resets
+%% clock i_clk
+%% reset -expression !(quick_n_reset)
+INFO (IPM031): Invalidating proof results of all properties in the Property Manager.
+INFO (IRS006): Current reset condition is "!(quick_n_reset)".
+%% # Setup current task environment
+%% task -set <embedded>
+<embedded>
+%% set_dst_mode -env off
+Invalidating proof results of all properties in task: "<embedded>".
+%% set_engine_mode {engineHp engineHt engineN engineB}
+[<embedded>] % prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = Hp Ht N B 
+    proofgrid_per_engine_max_jobs = 1
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+background
+INFO (IPF036): Starting proof on task: "<embedded>", 14 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis phase 2 of 4.
+INFO (IRS031): Running reset analysis phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 118 of 186 design flops, 0 of 0 design latches, 67 of 68 internal elements.
+Using multistage preprocessing
+Starting reduce
+Finished reduce in 0.002s
+Performing Proof Simplification...
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Hp: Proof Simplification Iteration 1	[0.00 s]
+0.Hp: Proof Simplification Iteration 2	[0.00 s]
+0.Hp: Proof Simplification Iteration 3	[0.00 s]
+0.Hp: Proof Simplification Iteration 4	[0.00 s]
+0.Hp: Proof Simplification Iteration 5	[0.00 s]
+Proof Simplification completed in 0.01 s
+0.Hp: Identified and disabled 1 duplicated target.
+About to start distributed ProofGrid in its own thread with a limit of 20 pending notifications.
+ProofGrid usable level: 13
+0.Hp: Proofgrid shell started at 16886@wario(local) jg_16499_wario_1
+0.Ht: Proofgrid shell started at 16887@wario(local) jg_16499_wario_1
+0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.N: Proofgrid shell started at 16888@wario(local) jg_16499_wario_1
+0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.B: Proofgrid shell started at 16892@wario(local) jg_16499_wario_1
+0.Ht: Trace Attempt  1	[0.00 s]
+0.N: A trace with 1 cycles was found. [0.00 s]
+0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.N: The cover property "a25_wishbone.wrp.WB_IDLE_ValidTransition:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.N: The cover property "a25_wishbone.wrp.WB_IDLE_TimeOut:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "a25_wishbone.wrp.WB_IDLE_ValidTransition:precondition1".
+0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.N: Starting proof for property "a25_wishbone.wrp.WB_IDLE_ValidTransition"	[0.00 s].
+0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.Ht: Trace Attempt  2	[0.00 s]
+0.Ht: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): 0.Ht: The cover property "a25_wishbone.wrp.WB_BURST1_ValidTransition:precondition1" was covered in 2 cycles in 0.00 s.
+0.Ht: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): 0.Ht: The cover property "a25_wishbone.wrp.WB_WAIT_ACK_ValidTransition1:precondition1" was covered in 2 cycles in 0.01 s.
+0.Ht: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): 0.Ht: The cover property "a25_wishbone.wrp.WB_WAIT_ACK_ValidTransition2:precondition1" was covered in 2 cycles in 0.01 s.
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.B: Starting proof for property "a25_wishbone.wrp.WB_IDLE_ValidTransition"	[0.00 s].
+0.B: Trace Attempt  1	[0.00 s]
+0.B: Trace Attempt  2	[0.00 s]
+0.B: Trace Attempt  3	[0.00 s]
+0.B: Trace Attempt  4	[0.01 s]
+0.Hp: Trace Attempt  1	[0.00 s]
+0.Ht: Trace Attempt  3	[0.00 s]
+0.Ht: A trace with 3 cycles was found. [0.00 s]
+INFO (IPF047): 0.Ht: The cover property "a25_wishbone.wrp.WB_BURST2_ValidTransition:precondition1" was covered in 3 cycles in 0.01 s.
+0.Ht: Trace Attempt  4	[0.00 s]
+0.Ht: A trace with 4 cycles was found. [0.00 s]
+INFO (IPF047): 0.Ht: The cover property "a25_wishbone.wrp.WB_BURST3_ValidTransition:precondition1" was covered in 4 cycles in 0.01 s.
+0.Ht: Trace Attempt  5	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Validation of fixpoint with 0 clauses was successful. Time = 0.00
+0.N: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.N: The property "a25_wishbone.wrp.WB_IDLE_ValidTransition" was proven in 0.01 s.
+0.N: Starting proof for property "a25_wishbone.wrp.WB_BURST1_ValidTransition"	[0.00 s].
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Validation of fixpoint with 0 clauses was successful. Time = 0.00
+0.N: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.N: The property "a25_wishbone.wrp.WB_BURST1_ValidTransition" was proven in 0.00 s.
+0.N: Starting proof for property "a25_wishbone.wrp.WB_BURST2_ValidTransition"	[0.00 s].
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.B: Trace Attempt  5	[0.01 s]
+0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.Hp: The property "a25_wishbone.wrp.WB_BURST2_ValidTransition" was proven in 0.01 s.
+0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.Hp: The property "a25_wishbone.wrp.WB_BURST3_ValidTransition" was proven in 0.01 s.
+0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.Hp: The property "a25_wishbone.wrp.WB_WAIT_ACK_ValidTransition1" was proven in 0.01 s.
+0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.Hp: The property "a25_wishbone.wrp.WB_WAIT_ACK_ValidTransition2" was proven in 0.01 s.
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Validation of fixpoint with 0 clauses was successful. Time = 0.00
+0.N: Cluster is entering permanent allocation mode.
+0.N: Starting proof for property "a25_wishbone.wrp.WB_BURST2_ValidTransition:precondition1"	[0.00 s].
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Starting proof for property "a25_wishbone.wrp.WB_BURST3_ValidTransition"	[0.00 s].
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Validation of fixpoint with 0 clauses was successful. Time = 0.00
+0.N: Starting proof for property "a25_wishbone.wrp.WB_WAIT_ACK_ValidTransition1"	[0.00 s].
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.B: Cluster is entering permanent allocation mode.
+0.B: Starting proof for property "a25_wishbone.wrp.WB_IDLE_TimeOut"	[0.00 s].
+0.B: Trace Attempt  1	[0.00 s]
+0.B: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Starting proof for property "a25_wishbone.wrp.WB_IDLE_TimeOut"	[0.00 s].
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  1	[0.00 s]
+0.N: Trace Attempt  2	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.N: Trace Attempt  3	[0.00 s]
+0.B: Trace Attempt  3	[0.00 s]
+0.Ht: Trace Attempt 15	[0.01 s]
+0.Ht: A trace with 15 cycles was found. [0.01 s]
+INFO (IPF055): 0.Ht: A counterexample (cex) with 15 cycles was found for the property "a25_wishbone.wrp.WB_IDLE_TimeOut" in 0.01 s.
+0.Ht: All properties determined. [0.01 s]
+Initiating shutdown of proof (@ 0.01 s)
+0.N: Trace Attempt  3	[0.00 s]
+0.Hp: Interrupted (multi)
+0.Ht: Exited with Success (@ 0.01 s)
+0.N: Trace Attempt  4	[0.00 s]
+0.Hp: Interrupted. [0.01 s]
+0.B: Interrupted. [0.01 s]
+0.Hp: Exited with Success (@ 0.01 s)
+0.B: Exited with Success (@ 0.01 s)
+0.N: Interrupted. [0.01 s]
+0.N: Exited with Success (@ 0.02 s)
+ProofGrid usable level: 0
+ProofGrid usable level: 0
+All pending notifications were processed.
+INFO (IPF059): Completed proof on task: <embedded>
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 14
+	      assertions      : 7
+	       - proven       : 6 (85.7143%)
+	       - marked_proven: 0 (0%)
+	       - cex          : 1 (14.2857%)
+	       - ar_cex       : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+	      covers          : 7
+	       - unreachable  : 0 (0%)
+	       - covered      : 7 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+[<embedded>] % visualize -violation -property <embedded>::a25_wishbone.wrp.WB_IDLE_TimeOut -new_window
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IVS008): Expanding analysis region to enable visualization of "<embedded>::a25_wishbone.wrp.WB_IDLE_TimeOut".
+cex
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

@@ -1,0 +1,76 @@
+ifv: 10.20-s070: (c) Copyright 1995-2011 Cadence Design Systems, Inc.
+
+ifv
+    -f test.f
+        a25_wishbone.v
+        FSMProperties_pkg.sv
+        module4SVA.sv
+        +bind_top+Wrapper
+        +tcl+test.tcl
+        -l test.log
+        -Q
+        -s
+
+formalbuild: Total errors   = 0.
+formalbuild: Total warnings = 8.
+formalbuild: Successfully completed.
+
+---
+
+FormalVerifier> clock -add i_clk -initial 0
+1 clock added.
+FormalVerifier> force quick_n_reset 0
+FormalVerifier> run 200
+Ran until 200 crank(s)
+FormalVerifier> init -load -current
+formalverifier: Current value of state variables loaded for formal verification.
+FormalVerifier> init -show
+
+a25_wishbone :
+	 o_wb_dat[31:0]                                    : 32'b00000000000000000000000000000000
+	 dcache_cached_rreq_r                              : 1'b0
+	 dcache_cached_wreq_r                              : 1'b0
+	 dcache_uncached_rreq_r                            : 1'b0
+	 dcache_uncached_wreq_r                            : 1'b0
+	 icache_read_req_r                                 : 1'b0
+	 icache_read_qword_r                               : 1'b0
+	 icache_read_addr_r[31:0]                          : 32'b00000000000000000000000000000000
+	 dcache_read_qword_r                               : 1'b0
+	 extra_write_data_r[31:0]                          : 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	 extra_write_address_r[31:0]                       : 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	 extra_write_be_r[3:0]                             : 4'bxxxx
+	 o_wb_adr[1:0]                                     : 2'b00
+	 o_wb_adr[3:2]                                     : 2'b00
+	 o_wb_adr[31:4]                                    : 28'b0000000000000000000000000000
+	 o_wb_sel[3:0]                                     : 4'b0000
+	 o_wb_we                                           : 1'b0
+	 o_wb_cyc                                          : 1'b0
+	 o_wb_stb                                          : 1'b0
+	 servicing_dcache_cached_read_r                    : 1'b0
+	 servicing_dcache_uncached_read_r                  : 1'b0
+	 servicing_icache_r                                : 1'b0
+	 extra_write_r                                     : 1'b0
+	 exclusive_access                                  : 1'b0
+	 wishbone_st[2:0]                                  : 3'b000
+FormalVerifier> constraint -add -pin quick_n_reset 1
+1 pin constraint added.
+FormalVerifier> assertion -add *
+formalverifier: *E,WLDNFD: Object matching "*" not found in the design.
+FormalVerifier> prove
+Modeling check mode:
+formalverifier: *W,NUINIT: Number of un-initialized DFF/DLAT in design : 68.
+  Vacuity check finished
+Verification mode:
+  wrp.WB_BURST3_ValidTransition : Pass - Trigger: Pass (7)
+  wrp.WB_WAIT_ACK_ValidTransition2 : Pass - Trigger: Pass (3)
+  wrp.WB_WAIT_ACK_ValidTransition1 : Pass - Trigger: Pass (3)
+  wrp.WB_IDLE_ValidTransition : Pass - Trigger: Pass (1)
+  wrp.WB_BURST1_ValidTransition : Pass - Trigger: Pass (3)
+  wrp.WB_BURST2_ValidTransition : Pass - Trigger: Pass (5)
+  wrp.WB_IDLE_TimeOut : Fail (2003) - Trigger: Pass
+Assertion Summary:
+  Total                  :   7
+  Pass                   :   6
+  Fail                   :   1
+  Not_Run                :   0
+FormalVerifier> exit

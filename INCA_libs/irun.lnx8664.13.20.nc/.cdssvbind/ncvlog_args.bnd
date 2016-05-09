@@ -1,0 +1,34 @@
+-MSS\ 
+-dumpxst\ 
+a25_wishbone_0x72239e3c\ 
+-LOG_FD\ 
+10\ 
+-neverwarn\ 
+-reduce_messages\ 
+-nocopyright\ 
+-specificunit\ 
+worklib.a25_wishbone:v\ 
+-NCERROR\ 
+CUVDSI\ 
+-NCERROR\ 
+CUVDSO\ 
+-NCERROR\ 
+CUVDSB\ 
+-NCERROR\ 
+CUVDSM\ 
+-NCERROR\ 
+CUVDSN\ 
+-NCERROR\ 
+CUVDSF\ 
+-LINEDEBUG\ 
+-SV\ 
+-DELAY_TRIGGER\ 
+-ASSERT\ 
+-GENASSERT_SYNTH_PRAGMA\ 
+-cdslib\ 
+./INCA_libs/irun.lnx8664.13.20.nc/cds.lib\ 
+-hdlvar\ 
+./INCA_libs/irun.lnx8664.13.20.nc/hdl.var\ 
+-runmode\ 
+-propfile ./INCA_libs/irun.lnx8664.13.20.nc/.cdssvbind/cds_tmp_svbind_single_00006b42_06924ddd_1.sva \ 
+/home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/a25_wishbone.v \ 

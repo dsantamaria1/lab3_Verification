@@ -1,0 +1,825 @@
+<spirit:component xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5/index.xsd $IREG_GEN/XMLSchema/SPIRIT/vendorExtensions.xsd" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vendorExtensions="$IREG_GEN/XMLSchema/SPIRIT">
+    <spirit:vendor>opencores.org</spirit:vendor>
+    <spirit:library>or1k</spirit:library>
+    <spirit:name>orpsoc_top</spirit:name>
+    <spirit:version>1300.008</spirit:version>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Bus Interfaces                                                          -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<spirit:busInterfaces>
+    <spirit:busInterface>
+        <spirit:name>ahb</spirit:name>
+        <spirit:busType spirit:vendor="amba.com" spirit:library="AMBA4" spirit:name="ahb" spirit:version="r0p0_0"/>
+        <spirit:abstractionType spirit:vendor="amba.com" spirit:library="AMBA4" spirit:name="ahb_rtl" spirit:version="r0p0_0"/>
+        <spirit:slave>
+        </spirit:slave>
+        <spirit:portMaps>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HCLK</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>clk_pad_i</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HRESETn</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>rst_n_pad_i</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HADDR</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>haddr</spirit:name>
+                    <spirit:vector>
+                        <spirit:left>17</spirit:left>
+                        <spirit:right>2</spirit:right>
+                    </spirit:vector>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HTRANS</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>htrans</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HWRITE</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hwrite</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HSIZE</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hsize</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HBURST</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hburst</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HSEL</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hsel</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HWDATA</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hwdata</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HRDATA</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hrdata</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HRESP</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hresp</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HREADY</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hready</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HPROT</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>hprot</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+            <spirit:portMap>
+                <spirit:logicalPort>
+                    <spirit:name>HREADYOUT</spirit:name>
+                </spirit:logicalPort>
+                <spirit:physicalPort>
+                    <spirit:name>1'b1</spirit:name>
+                </spirit:physicalPort>
+            </spirit:portMap>
+        </spirit:portMaps>
+    </spirit:busInterface>
+</spirit:busInterfaces>
+
+<!-- Signals                                                                            -->
+<!--                                                                                    -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<spirit:fileSets>
+    <spirit:fileSet>
+        <spirit:name>RTL Files</spirit:name>
+
+        <spirit:dependency>include</spirit:dependency>
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/hostSlaveMuxBI.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/slaveSendPacket.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/slaveRxStatusMonitor.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/SIETransmitter.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/speedCtrlMux.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/readUSBWireData.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/slaveDirectControl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/lineControlUpdate.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/processRxBit.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/USBSlaveControlBI.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/sendPacketCheckPreamble.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/USBTxWireArbiter.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/updateCRC5.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/directControl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/slavecontroller.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/RxFifo.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/usbSerialInterfaceEngine.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/TxFifo.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/SOFController.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/usbhost.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/fifoRTL.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/hostSlaveMux.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/USBHostControlBI.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/hostcontroller.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/processTxByte.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/SIEReceiver.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/fifoMux.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/updateCRC16.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/getPacket.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/SCTxPortArbiter.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/usbHostControl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/sendPacket.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/usbSlaveControl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/dpMem_dc.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/usbhostslave.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/wishBoneBI.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/SOFTransmit.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/TxfifoBI.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/endpMux.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/processRxByte.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/slaveGetPacket.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/writeUSBWireData.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/usbslave.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/sendPacketArbiter.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/HCTxPortArbiter.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/rxStatusMonitor.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./usbhostslave/RxfifoBI.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./simple_spi/simple_spi.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./simple_spi/fifo4.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./cfi_ctrl/cfi_ctrl_engine.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./cfi_ctrl/cfi_ctrl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./i2c_master_slave/i2c_master_slave.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./i2c_master_slave/i2c_master_byte_ctrl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./i2c_master_slave/i2c_master_bit_ctrl.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./clkgen/clkgen.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ram_wb/ram_wb_b3.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ram_wb/ram_wb.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./arbiter/arbiter_dbus.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./arbiter/arbiter_ibus.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./arbiter/arbiter_bytebus.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+        
+        <spirit:file>
+            <spirit:name>./dbg_if/dbg_cpu_registers.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./dbg_if/dbg_register.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./dbg_if/dbg_if.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./dbg_if/dbg_cpu.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./dbg_if/dbg_wb.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./dbg_if/dbg_crc32_d1.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./intgen/intgen.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/xilinx_dist_ram_16x32.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_outputcontrol.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_miim.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_clockgen.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_transmitcontrol.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_maccontrol.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_rxcounters.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_fifo.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_rxaddrcheck.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_wishbone.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_crc.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_txstatem.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_shiftreg.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_txcounters.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/ethmac.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_rxethmac.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_receivecontrol.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_spram_256x32.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_register.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_macstatus.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_registers.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_txethmac.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_rxstatem.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./ethmac/eth_random.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./orpsoc_top/orpsoc_top.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./wb_ram_b3/wb_ram_b3.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_receiver.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart16550.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_regs.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/raminfr.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_debug_if.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_tfifo.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_transmitter.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_sync_flops.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_wb.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./uart16550/uart_rfifo.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./wb_switch_b3/wb_switch_b3.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./smii/smii.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./smii/smii_if.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./smii/smii_sync.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./rom/rom.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+        
+        <spirit:file>
+            <spirit:name>./jtag_tap/jtag_tap.v</spirit:name>
+            <spirit:fileType>systemVerilogSource</spirit:fileType>
+        </spirit:file>
+
+    </spirit:fileSet>
+</spirit:fileSets>
+
+<spirit:model>
+  <spirit:views>
+      <spirit:view>
+          <spirit:name>verilog</spirit:name>
+          <spirit:displayName>Verilog view</spirit:displayName>
+          <spirit:description>Verilog view for the component top.</spirit:description>
+          <spirit:envIdentifier>verilogSource:*Simulation:</spirit:envIdentifier>
+          <spirit:envIdentifier>verilogSource:*Synthesis:</spirit:envIdentifier>
+          <spirit:language>verilog</spirit:language>
+          <spirit:modelName>orpsoc_top</spirit:modelName>
+          <spirit:fileSetRef>RTL Files</spirit:fileSetRef>
+      </spirit:view>
+      <spirit:view>
+          <spirit:name>hierarchical</spirit:name>
+          <spirit:displayName>Design view</spirit:displayName>
+          <spirit:envIdentifier>::</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:vendor="opencores.org" spirit:library="or1k" spirit:name="orpsoc_top" spirit:version="1300.008"/>
+      </spirit:view>
+  </spirit:views>
+</spirit:model>
+</spirit:component>
+

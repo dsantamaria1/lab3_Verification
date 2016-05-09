@@ -1,0 +1,23 @@
+INTERFACE, ahb_rtl, , HCLK, HRESETn, HADDR, HTRANS, HWRITE, HSIZE, HBURST, HSEL, HWDATA, HRDATA, HRESP, HREADY, HPROT, HREADYOUT,#ipxact/ahb_rtl.xml:10
+INTERFACE_MAP, orpsoc_top, ahb, ahb_rtl,#ipxact/top.xml:12
+,HCLK,clk_pad_i
+,HRESETn,rst_n_pad_i
+,HADDR,haddr[17:2]
+,HTRANS,htrans
+,HWRITE,hwrite
+,HSIZE,hsize
+,HBURST,hburst
+,HSEL,hsel
+,HWDATA,hwdata
+,HRDATA,hrdata
+,HRESP,hresp
+,HREADY,hready
+,HPROT,hprot
+,HREADYOUT,1'b1
+,INTERFACE_MAP_END
+CONNECTION, connection0, or1200_top0, iwb_clk_i, ahb2wb, clk_i,#ipxact/top_design.xml:22
+CONNECTION, connection1, or1200_top0, iwb_rst_i, ahb2wb, rst_i,#ipxact/top_design.xml:27
+CONNECTION, connection2, or1200_top0, dbg_adr_i, ahb2wb, adr_o,#ipxact/top_design.xml:32
+CONNECTION, connection3, or1200_top0, dbg_dat_i, ahb2wb, dat_o,#ipxact/top_design.xml:37
+CONNECTION, connection4, or1200_top0, dbg_dat_o, ahb2wb, dat_i,#ipxact/top_design.xml:42
+CONNECTION, connection5, or1200_top0, dbg_ack_o, ahb2wb, ack_i,#ipxact/top_design.xml:47

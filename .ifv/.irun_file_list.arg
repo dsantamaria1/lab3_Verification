@@ -1,0 +1,19 @@
+ -c  -assert -nowarn BADPRF -linedebug -smartorder -ignorelibvar
+ -access +C -nowarn INVSUP -ncvhdlargs "-ncerror DBLUNW"
+ -delay_mode zero -expand -nocopyright -delay_trigger
+ -ncerror CUVDSI -ncerror CUVDSO -ncerror CUVDSB -ncerror CUVDSM -ncerror CUVDSN -ncerror CUVDSF 
+ -l .ifv/irun.log
+ -V93
+ -q
+ -GENASSERT_SYNTH_PRAGMA
+ -SV
+ -libext .vlib -libext .v
+ -timescale 1ns/1ps
+ -INCDIR /usr/local/packages/cadence_2010/INCISIV102/tools/ial/include 
+-DEFINE IAL_OVL_ACCELLERA
+-DEFINE OVL_PSL
+-DEFINE OVL_ASSERT_ON
+-DEFINE IAL_IFV
+a25_wishbone.v
+FSMProperties_pkg.sv
+module4SVA.sv

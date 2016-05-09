@@ -1,0 +1,11 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-ACCESS
++C
+-DELAY_MODE
+zero
+-EXPAND
+-timescale
+1ns/1ps

@@ -1,0 +1,14 @@
+#!/bin/csh -f
+
+if ($#argv < 1 || $#argv > 2) then
+    echo "Usage: $0 <testbench_file> <quoted_additional_options>"
+    exit 1
+endif
+
+irun \
+-NOCOPYRIGHT \
+-CDSLIB ./INCA_libs/ifvcds.lib \
+-HDLVAR ./INCA_libs/ifvhdl.var \
+-NOWARN DLDEFM  "$1"  \
++tcl+"$1.tcl" $2 \
+-f .ifv/.irun_file_list.arg.tb 

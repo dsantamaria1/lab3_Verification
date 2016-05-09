@@ -1,0 +1,13 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-NOCOPYRIGHT
+-CDSLIB
+./INCA_libs/ifvcds.lib
+-HDLVAR
+./INCA_libs/ifvhdl.var
+-NOWARN
+DLDEFM
+-f
+.ifv/.irun_file_list.arg

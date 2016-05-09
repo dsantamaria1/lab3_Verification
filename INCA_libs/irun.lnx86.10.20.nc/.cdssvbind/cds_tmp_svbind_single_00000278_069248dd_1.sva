@@ -1,0 +1,12 @@
+vunit cds_psl1 (a25_wishbone) {
+(*cds_generated_bind_instance*)
+module4SVA wrp (
+
+.i_clk(i_clk), 
+.wishbone_st(wishbone_st), 
+.i_wb_ack(i_wb_ack), 
+.extra_write_r(extra_write_r), 
+.quick_n_reset(quick_n_reset));
+
+}
+

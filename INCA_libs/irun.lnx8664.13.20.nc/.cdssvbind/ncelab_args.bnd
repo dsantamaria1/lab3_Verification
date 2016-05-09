@@ -1,0 +1,1 @@
+-f /home/ecelrc/students/dsantamaria/Verification_EE382V/lab3/INCA_libs/irun.lnx8664.13.20.nc/ncelab.args -CHECK_VERSION "TOOL:	irun(64)	13.20-s034" -LOG_FD 10 -reinvoke ./INCA_libs/irun.lnx8664.13.20.nc/.cdssvbind/stf_00006b42_06924ddd.txt -symreinvoke extbind_reinvoke -nocopyright -append_log 

@@ -1,0 +1,4 @@
+ softinclude /usr/local/packages/cadence_2010/INCISIV102/tools/inca/files/cds.lib
+ softinclude /usr/local/packages/cadence_2010/INCISIV102/tools/ifv/files/OVL/VHDL/cds.lib
+ softinclude /usr/local/packages/cadence_2010/INCISIV102/tools/ifv/files/OVLACCELLERA/VERILOG/cdsovlverilog.lib
+ 
